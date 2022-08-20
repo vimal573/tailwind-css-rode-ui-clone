@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-x-hidden">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            screens: {
+              "2xl": "1400px",
+              // => @media (min-width: 992px) { ... }
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="icon" href="https://cdn.rode.com/website/rode-favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="/css/app.css?id=7e97e1c7e116f28348faa05149e6a23c"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Rode Clone</title>
+  </head>
+  <body class="font-[Inter] overflow-x-hidden">
+    <!-- Header -->
+    <header>
+      <nav
+        class="2xl:container mx-auto flex items-center justify-between p-2 lg:py-7 lg:px-20 shadow"
+      >
+        <!-- Mobile nav -->
+        <div class="block lg:hidden text-2xl">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <!-- Logo -->
+        <div>
+          <a href="#"
+            ><svg
+              version="1.1"
+              id="Rode_Logo"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0px"
+              y="0px"
+              viewBox="0 0 792.9 220.2"
+              xml:space="preserve"
+              style="height: 24px"
+            >
+              <g>
+                <path
+                  d="M179.8,69.2c0-39.4-38.8-63.6-74.9-63.6H0v208.7h62.8V113.4l48.4,99.2l0.8,1.5h71.3l-49.8-87.8
+            C162.2,118.2,179.8,96.5,179.8,69.2z M62.8,35.8h18.4c20,0,34,14.2,34,34.4c0,29.2-16.7,35-45.7,35h-6.9V35.8H62.8z"
+                ></path>
+                <polygon
+                  points="717,181.1 717,123.8 785.4,123.8 785.4,90.5 717,90.5 717,39 789,39 789,5.6 654.3,5.6 654.3,214.3 792.9,214.3 
+            792.9,181.1 	"
+                ></polygon>
+                <path
+                  d="M525.4,5.6H433v208.7h101.9c62.5,0,102.8-39.4,102.8-100.5C637.4,51.1,590.3,5.6,525.4,5.6z M572.6,105.5
+            c0,38.8-15.4,80.1-58.8,80.1h-20.9V34.2h18.8C553.8,34.2,572.6,70,572.6,105.5z"
+                ></path>
+                <path
+                  d="M410.8,19.6L393.3,2.1l-21.5,21.5C353,8.9,328.8,0,302.3,0C240,0,191.4,48.3,191.4,110c0,26.7,9.2,50.9,24.6,69.8
+            l-21.1,21.1l17.5,17.5l21.3-21.3c18.8,14.4,42.5,23.1,68.6,23.1c62.3,0,110.9-48.2,110.9-109.9c0-26.3-8.8-50.2-23.8-68.8
+            L410.8,19.6z M302.4,27.3c19.4,0,30.7,12.7,37.3,28.6l-81.5,81.5c-1.5-10.4-1.9-20.4-1.9-27.5C256.3,85.2,260.9,27.3,302.4,27.3z
+             M346.6,83.8c1.3,10,1.7,19.2,1.7,26.1c0,24.8-4.4,82.6-46.1,82.6c-19,0-30.2-12.1-36.9-27.7L346.6,83.8z"
+                ></path>
+              </g></svg
+          ></a>
+        </div>
+
+        <!-- Navbar -->
+        <div class="hidden lg:flex gap-10 text-sm font-medium uppercase">
+          <a href="#">Products</a>
+          <a href="#">User Guides</a>
+          <a href="#">Solutions</a>
+          <a href="#">Apparel</a>
+          <a href="#">Support</a>
+        </div>
+
+        <!-- Search Icon -->
+        <div>
+          <svg
+            data-v-084759c0=""
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10.4629 20.0231C15.6892 20.0231 19.9259 15.7646 19.9259 10.5115C19.9259 5.25846 15.6892 1 10.4629 1C5.2367 1 1 5.25846 1 10.5115C1 15.7646 5.2367 20.0231 10.4629 20.0231Z"
+              stroke="#484848"
+              stroke-width="2"
+              stroke-miterlimit="10"
+            ></path>
+            <path
+              d="M17.6455 17.6025L26.0002 26.0001"
+              stroke="#484848"
+              stroke-width="2"
+              stroke-miterlimit="10"
+              stroke-linecap="round"
+            ></path>
+          </svg>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+
+      <div
+        class="bg-black lg:bg-[url('https://edge.rode.com/images/page/1/modules/5813/rode-rodecaster-pro-II-home-page-1920x700-rgb.jpg')] lg:h-screen lg:bg-cover lg:bg-center"
+      >
+        <div
+          class="2xl:container mx-auto flex justify-start lg:justify-center items-center flex-col lg:flex-row lg:items-center h-full pb-10 lg:pb-0"
+        >
+          <div class="lg:w-2/3">
+            <img
+              src="https://edge.rode.com/images/page/1/modules/5813/rode-rodecaster-pro-II-home-page-800x700-rgb.jpg"
+              alt=""
+              class="lg:hidden width-full"
+            />
+          </div>
+          <div
+            class="flex flex-col items-center w-11/12 lg:w-[500px] text-center lg:mr-20"
+          >
+            <img
+              src="https://edge.rode.com/images/page/1/modules/5813/RODECasterProII_PL_PI_01.svg"
+              alt=""
+              class="h-11 mb-6"
+            />
+            <h1 class="text-2xl font-semibold text-white mb-2">
+              The Revolution Is Here
+            </h1>
+            <p class="text-[hsla(0,0%,100%,.5)] mb-11">
+              The RØDECaster Pro II is the world's most powerful all-in-one
+              audio solution for streamers, podcasters, musicians, and creators.
+              Take your content to the next level.
+            </p>
+
+            <!-- Button -->
+            <div>
+              <a class="text-[#ad9970] font-semibold mr-4" href="#"
+                >LEARN MORE <i class="fa-solid fa-angle-right ml-0.5"></i
+              ></a>
+              <a
+                class="bg-[#ad9970] text-white font-semibold py-2 px-5 rounded-full hover:bg-white hover:text-[#ad9970] transition-all duration-300"
+                href="#"
+                >BUY NOW</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- NTH100 section -->
+      <section
+        class="lg:bg-[url('https://edge.rode.com/images/page/1/modules/5873/rode-nth100-lifestyle-insitu-female-looking-down-grey-1920x700-rgb.jpg')] lg:h-screen lg:bg-cover lg:bg-center"
+      >
+        <div
+          class="2xl:container mx-auto flex flex-col lg:flex-row gap-6 lg:gap-0 items-center justify-center h-full pt-10 lg:pt-0"
+        >
+          <div
+            class="flex flex-col items-center w-11/12 lg:w-[500px] text-center lg:ml-20"
+          >
+            <img
+              src="https://edge.rode.com/images/page/1/modules/5873/NTH-100_PL_P_RGB_01.svg"
+              alt=""
+              class="h-11 mb-6"
+            />
+            <h1 class="text-2xl font-medium mb-2">
+              Your Search For The Perfect Headphones Is Over
+            </h1>
+            <p class="opacity-50 mb-11">
+              The RØDECaster Pro II is the world's most powerful all-in-one
+              audio solution for streamers, podcasters, musicians, and creators.
+              Take your content to the next level.
+            </p>
+
+            <!-- Button -->
+            <div>
+              <a class="text-[#ad9970] font-semibold mr-4" href="#"
+                >LEARN MORE <i class="fa-solid fa-angle-right ml-0.5"></i
+              ></a>
+              <a
+                class="bg-[#ad9970] text-white font-semibold py-2 px-5 rounded-full hover:bg-white hover:text-[#ad9970] transition-all duration-300"
+                href="#"
+                >BUY NOW</a
+              >
+            </div>
+          </div>
+          <div class="lg:w-2/3">
+            <img
+              src="https://edge.rode.com/images/page/1/modules/5914/rode-nt-usb-webheader-v7-800x700-rgb.jpg"
+              alt=""
+              class="lg:hidden width-full"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- NTHUSB section -->
+      <section
+        class="lg:bg-[url('https://edge.rode.com/images/page/1/modules/5914/rode-nt-usb-webheader-v7-1920x700-rgb.jpg')] lg:h-screen lg:bg-cover lg:bg-center"
+      >
+        <div
+          class="2xl:container mx-auto flex flex-col-reverse lg:flex-row gap-6 lg:gap-0 items-center justify-center h-full pt-10 lg:pt-0"
+        >
+          <div class="lg:w-2/3">
+            <img
+              src="https://edge.rode.com/images/page/1/modules/1508/rode-podmic-webheader-800x700-rgb-(2).jpg"
+              alt=""
+              class="lg:hidden width-full"
+            />
+          </div>
+          <div
+            class="flex flex-col items-center w-11/12 lg:w-[500px] text-center lg:mr-20"
+          >
+            <img
+              src="https://edge.rode.com/images/page/1/modules/5914/NT-USB_PL_P_01.svg"
+              alt=""
+              class="h-11 mb-6"
+            />
+            <h1 class="text-2xl font-medium mb-2">
+              Studio-Quality Recording, Made Simple
+            </h1>
+            <p class="opacity-50 mb-11">
+              The NT-USB is a studio-quality USB condenser microphone that
+              offers impeccable audio, elegant looks and premium features, all
+              in an easy-to-use form factor, the NT-USB will have you sounding
+              like a pro in seconds.
+            </p>
+
+            <!-- Button -->
+            <div>
+              <a class="text-[#ad9970] font-semibold mr-4" href="#"
+                >LEARN MORE <i class="fa-solid fa-angle-right ml-0.5"></i
+              ></a>
+              <a
+                class="bg-[#ad9970] text-white font-semibold py-2 px-5 rounded-full hover:bg-white hover:text-[#ad9970] transition-all duration-300"
+                href="#"
+                >BUY NOW</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PODMIC section -->
+      <section
+        class="lg:bg-[url('https://edge.rode.com/images/page/1/modules/1508/rode-podmic-webheader-1920x700-rgb%20(2).jpg')] lg:h-screen lg:bg-cover lg:bg-center"
+      >
+        <div
+          class="2xl:container mx-auto flex flex-col lg:flex-row gap-6 lg:gap-0 items-center justify-center h-full pt-10 lg:pt-0"
+        >
+          <div
+            class="flex flex-col items-center w-11/12 lg:w-[500px] text-center lg:ml-20"
+          >
+            <img
+              src="https://edge.rode.com/images/page/1/modules/1508/PodMic_PL_PI_01.svg"
+              alt=""
+              class="h-11 mb-6 hidden lg:block"
+            />
+            <img
+              src="https://edge.rode.com/images/page/1/modules/1508/PodMic_PL_P_01_web-top-padding-01.svg"
+              alt=""
+              class="h-16 mb-6 lg:hidden"
+            />
+            <h1 class="text-2xl font-medium lg:text-white mb-2">
+              Broadcast-grade Dynamic Microphone
+            </h1>
+            <p class="opacity-50 lg:text-[hsla(0,0%,100%,.5)] mb-11">
+              Give your voice that rich, broadcast sound with the PodMic.
+              Perfect for livestreaming, voice-over, podcasting and gameplay.
+            </p>
+
+            <!-- Button -->
+            <div>
+              <a class="text-[#ad9970] font-semibold mr-4" href="#"
+                >LEARN MORE <i class="fa-solid fa-angle-right ml-0.5"></i
+              ></a>
+              <a
+                class="bg-[#ad9970] text-white font-semibold py-2 px-5 rounded-full hover:bg-white hover:text-[#ad9970] transition-all duration-300"
+                href="#"
+                >BUY NOW</a
+              >
+            </div>
+          </div>
+          <div class="w-2/3">&nbsp</div>
+        </div>
+      </section>
+
+      <!-- WirelessGO Section -->
+      <section
+        class="lg:bg-[url('https://edge.rode.com/images/page/1/modules/314/WIGOII-WEBHEADER-02.jpg')] lg:h-screen lg:bg-cover lg:bg-center"
+      >
+        <div
+          class="2xl:container mx-auto flex flex-col lg:flex-row gap-6 lg:gap-0 items-center justify-center h-full pb-10 lg:pb-0"
+        >
+          <div class="lg:w-2/3">
+            <img
+              src="https://edge.rode.com/images/page/1/modules/314/rode-wigo2-web-header-800x700.jpg"
+              alt=""
+              class="lg:hidden width-full"
+            />
+          </div>
+          <div
+            class="flex flex-col items-center w-11/12 lg:w-[500px] text-center lg:mr-20"
+          >
+            <img
+              src="https://edge.rode.com/images/page/1/modules/314/WIGO_II_PL_PI_01.svg"
+              alt=""
+              class="h-11 mb-6 hidden lg:block"
+            />
+            <img
+              src="https://edge.rode.com/images/page/1/modules/314/WIGO_II_PL_P_01_web-top-padding-01.svg"
+              alt=""
+              class="h-16 mb-6 lg:hidden"
+            />
+            <h1 class="text-2xl font-semibold lg:text-white mb-2">
+              Next Generation Wireless Audio
+            </h1>
+            <p class="opacity-50 lg:text-[hsla(0,0%,100%,.5)] mb-11">
+              The Wireless GO II is the world’s most powerful and versatile
+              wireless microphone. With an unparalleled feature set and
+              ultra-compact form factor, this is next generation wireless audio
+              for every creator.
+            </p>
+
+            <!-- Button -->
+            <div>
+              <a class="text-[#ad9970] font-semibold mr-4" href="#"
+                >LEARN MORE <i class="fa-solid fa-angle-right ml-0.5"></i
+              ></a>
+              <a
+                class="bg-[#ad9970] text-white font-semibold py-2 px-5 rounded-full hover:bg-white hover:text-[#ad9970] transition-all duration-300"
+                href="#"
+                >BUY NOW</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NTUSB MINI section -->
+      <section
+        class="lg:bg-[url('https://edge.rode.com/images/page/1/modules/5303/rode-nt-usb-mini-webheader-1920x700-rgb%20(2).jpg')] lg:h-screen bg-cover bg-center"
+      >
+        <div
+          class="2xl:container mx-auto flex flex-col-reverse lg:flex-row gap-6 lg:gap-0 items-center justify-center h-full pb-10 lg:pb-0"
+        >
+          <div
+            class="flex flex-col items-center w-11/12 lg:w-[500px] text-center lg:ml-20"
+          >
+            <img
+              src="https://edge.rode.com/images/page/1/modules/5303/NT-USB_Mini_PL_PI_01.svg"
+              alt=""
+              class="h-11 mb-6 hidden lg:block"
+            />
+            <img
+              src="https://edge.rode.com/images/page/1/modules/1508/PodMic_PL_P_01_web-top-padding-01.svg"
+              alt=""
+              class="h-16 mb-6 lg:hidden"
+            />
+            <h1 class="text-2xl font-medium lg:text-white mb-2">
+              Compact Sound, Incredibly Powerful
+            </h1>
+            <p class="opacity-50 lg:text-[hsla(0,0%,100%,.5)] mb-11">
+              The NT-USB Mini brings pristine studio sound to a compact USB
+              microphone, and with RØDE Connect unlocking more power, more
+              features and more control, it’s the perfect recording solution for
+              podcasters, gamers and streamers.
+            </p>
+
+            <!-- Button -->
+            <div>
+              <a class="text-[#ad9970] font-semibold mr-4" href="#"
+                >LEARN MORE <i class="fa-solid fa-angle-right ml-0.5"></i
+              ></a>
+              <a
+                class="bg-[#ad9970] text-white font-semibold py-2 px-5 rounded-full hover:bg-white hover:text-[#ad9970] transition-all duration-300"
+                href="#"
+                >BUY NOW</a
+              >
+            </div>
+          </div>
+          <div class="lg:w-2/3">
+            <img
+              src="https://edge.rode.com/images/page/1/modules/5303/rode-nt-usb-mini-webheader-800x700-rgb.jpg"
+              alt=""
+              class="lg:hidden width-full"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Category Section -->
+      <section
+        class="2xl:container mx-auto py-14 px-6 md:px-24 lg:px-20 text-center"
+      >
+        <h2 class="text-4xl text-[#767676] font-semibold mb-10">
+          Explore The RØDE Range
+        </h2>
+
+        <div class="flex flex-col gap-10">
+          <!-- Category -->
+          <div>
+            <a href="#">
+              <div
+                class="bg-[url('https://edge.rode.com/images%2Fpage%2F1%2Fmodules%2F5357%2Fmicrophones-module-1200x300-rgb.png')] bg-cover bg-center h-40 md:h-60 lg:h-72 flex items-center"
+              >
+                <img
+                  src="https://edge.rode.com/images%2Fpage%2F1%2Fmodules%2F5364%2Fmicrophones-text.svg"
+                  alt=""
+                />
+              </div>
+            </a>
+          </div>
+
+          <!-- Category -->
+          <div>
+            <a href="#">
+              <div
+                class="bg-[url('https://rode.com/assets/images%2Fpage%2F1%2Fmodules%2F5359%2Finterfaces-module-2022-1200x300-rgb.jpg')] h-72 flex items-center"
+              >
+                <img
+                  src="https://edge.rode.com/images%2Fpage%2F1%2Fmodules%2F5366%2Finterfaces-text.svg"
+                  alt=""
+                />
+              </div>
+            </a>
+          </div>
+
+          <!-- Category -->
+          <div>
+            <a href="#">
+              <div
+                class="bg-[url('https://edge.rode.com/images%2Fpage%2F1%2Fmodules%2F5361%2Fsoftware-module-2021-1200x300-rgb.png')] bg-cover bg-center h-40 md:h-60 lg:h-72 flex items-center"
+              >
+                <img
+                  src="https://edge.rode.com/images%2Fpage%2F1%2Fmodules%2F5365%2Fsoftware-text.svg"
+                  alt=""
+                />
+              </div>
+            </a>
+          </div>
+
+          <!-- Category -->
+          <div>
+            <a href="#">
+              <div
+                class="bg-[url('https://edge.rode.com/images%2Fpage%2F1%2Fmodules%2F5370%2Faccessories-module-2021-1200x300-rgb.png')] bg-cover bg-center h-40 md:h-60 lg:h-72 flex items-center"
+              >
+                <img
+                  src="https://edge.rode.com/images%2Fpage%2F1%2Fmodules%2F5368%2Faccessories-text.svg"
+                  alt=""
+                />
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Blog section -->
+      <section class="2xl:container mx-auto text-center bg-[#f8f9fa]">
+        <h2 class="text-4xl font-semibold mb-16">
+          <a class="text-[#ad9970]" href="#">Latest From The RØDE Blog</a>
+        </h2>
+
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 items-center gap-x-10 gap-y-16 justify-items-center px-4 md:px-0"
+        >
+          <!-- Blog card 1-->
+          <div class="flex flex-col items-center md:w-[540px]">
+            <h3 class="text-2xl">
+              The Difference Between Large-Diaphragm and Small-Diaphragm
+              Condenser Microphones
+            </h3>
+            <img
+              src="https://edge.rode.com/images/page/1/modules/6459/thumbnail6.jpeg"
+              alt=""
+              class="mb-6"
+            />
+            <p class="mb-8">
+              We explore the difference between large- and small-diaphragm
+              condenser microphones, and what each is best used for.
+            </p>
+            <div
+              class="bg-[#ad9970] text-white font-semibold py-1.5 px-6 rounded-full border-2 border-transparent hover:border-[#ad9970] hover:bg-white hover:text-[#ad9970] transition-all duration-300"
+            >
+              <a href="#">LEARN MORE</a>
+            </div>
+          </div>
+
+          <!-- Blog card 1-->
+          <div class="flex flex-col items-center md:w-[540px]">
+            <h3 class="text-2xl">
+              What is a Condenser Microphone and When to Use One
+            </h3>
+            <img
+              src="https://edge.rode.com/images/page/1/modules/6446/thumbnail.jpg"
+              alt=""
+              class="w-full mb-6"
+            />
+            <p class="mb-8">
+              Learn more about the different types of condenser mics, how they
+              work and the best applications for using them.
+            </p>
+            <div
+              class="bg-[#ad9970] text-white font-semibold py-1.5 px-6 rounded-full border-2 border-transparent hover:border-[#ad9970] hover:bg-white hover:text-[#ad9970] transition-all duration-300"
+            >
+              <a href="#">LEARN MORE</a>
+            </div>
+          </div>
+
+          <!-- Blog card 1-->
+          <div class="flex flex-col items-center md:w-[540px]">
+            <h3 class="text-2xl">
+              Firmware Version 1.0.7 for the RØDECaster Pro II is Available Now
+            </h3>
+            <img
+              src="https://edge.rode.com/images/page/1/modules/6413/rode-rodecaster-pro-II-on-black-front-580x509.jpg"
+              alt=""
+              class="w-full mb-6"
+            />
+            <p class="mb-8">
+              Firmware version 1.0.7 includes key feature additions, such as
+              custom routing for USB and Bluetooth outputs, and more.
+            </p>
+            <div
+              class="bg-[#ad9970] text-white font-semibold py-1.5 px-6 rounded-full border-2 border-transparent hover:border-[#ad9970] hover:bg-white hover:text-[#ad9970] transition-all duration-300"
+            >
+              <a href="#">LEARN MORE</a>
+            </div>
+          </div>
+
+          <!-- Blog card 1-->
+          <div class="flex flex-col items-center md:w-[540px]">
+            <h3 class="text-2xl">
+              The RØDECaster Pro II Is Shipping Now <br />&nbsp;
+            </h3>
+            <img
+              src="https://edge.rode.com/images/page/1/modules/6274/rode-rodecaster-pro-II-on-black-front-on-580x509-rgb.jpg"
+              alt=""
+              class="w-full mb-6"
+            />
+            <p class="mb-8">
+              The world’s most powerful all-in-one audio solution for content
+              creators is now available worldwide.
+            </p>
+            <div
+              class="bg-[#ad9970] text-white font-semibold py-1.5 px-6 rounded-full border-2 border-transparent hover:border-[#ad9970] hover:bg-white hover:text-[#ad9970] transition-all duration-300"
+            >
+              <a href="#">LEARN MORE</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <!-- Footer Top -->
+      <hr />
+      <div
+        class="2xl:container mx-auto px-20 py-16 border-b-2 border-slate-200"
+      >
+        <div
+          class="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-4 lg:gap-0 text-[#484848] mb-10"
+        >
+          <div>
+            <img
+              src="https://cdn.rode.com/website/images/logo/RODE_logo_142x85_desktop_light_mode.svg"
+              alt=""
+              class="h-22 md:mr-16"
+            />
+          </div>
+
+          <div class="flex flex-col lg:flex-row item-start gap-8 lg:gap-20">
+            <div>
+              <h3 class="font-semibold text-[#262626] mb-3">Products</h3>
+              <ul class="flex flex-col gap-2.5">
+                <li>
+                  <a class="hover:opacity-60" href="#">Microphones</a>
+                </li>
+                <li>
+                  <a class="hover:opacity-60" href="#">Headphones</a>
+                </li>
+                <li>
+                  <a class="hover:opacity-60" href="#">Interfaces and Mixers</a>
+                </li>
+                <li>
+                  <a class="hover:opacity-60" href="#">Accessories</a>
+                </li>
+                <li>
+                  <a class="hover:opacity-60" href="#">Software</a>
+                </li>
+                <li>
+                  <a class="hover:opacity-60" href="#">Apparel</a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="font-semibold text-[#262626] mb-3">Support</h3>
+              <ul class="flex flex-col gap-2.5">
+                <li>
+                  <a class="hover:opacity-60" href="#">Contact RØDE</a>
+                </li>
+                <li>
+                  <a class="hover:opacity-60" href="#">Service Centre</a>
+                </li>
+                <li>
+                  <a class="hover:opacity-60" href="#">Warranty</a>
+                </li>
+                <li>
+                  <a class="hover:opacity-60" href="#">Where to Buy</a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <div>
+                <h3 class="font-semibold text-[#262626] mb-3">Company</h3>
+                <ul class="flex flex-col gap-2.5 mb-3">
+                  <li><a class="hover:opacity-60" href="#">About RØDE</a></li>
+                  <li>
+                    <a class="hover:opacity-60" href="#">News and Info</a>
+                  </li>
+                  <li>
+                    <a class="hover:opacity-60" href="#">Job Opportunities</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 class="font-semibold text-[#262626] mb-3">Account</h3>
+                <ul class="flex flex-col gap-2.5">
+                  <li>
+                    <a class="hover:opacity-60" href="#">Manage your Account</a>
+                  </li>
+                  <li>
+                    <a class="hover:opacity-60" href="#">Create Acount</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center lg:items-end">
+            <h3
+              class="text-[#262626] font-semibold text-2xl mb-3 text-center lg:text-end w-full lg:w-[300px]"
+            >
+              Subscribe to our latest news and offers
+            </h3>
+            <div
+              class="bg-[#ad9970] text-white font-semibold py-1.5 px-6 rounded-full border-2 border-transparent hover:border-[#ad9970] hover:bg-white hover:text-[#ad9970] transition-all duration-300"
+            >
+              <a href="#">Sign Up</a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="text-sm text-[#484848] flex flex-col lg:flex-row justify-between items-center gap-4 border-t-2 border-slate-200 pt-10"
+        >
+          <p class="order-last lg:order-0">
+            &copy; 2022 RØDE All Rights Reserved.
+          </p>
+          <p class="order-first lg:order-1">
+            Privacy Policy | Terms & Conditions
+          </p>
+          <div
+            class="flex gap-4 md:gap-20 lg:gap-6 text-2xl text-[#ad9970] order-2"
+          >
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
