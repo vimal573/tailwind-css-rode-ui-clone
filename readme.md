@@ -26,8 +26,8 @@
 
 ## Time taken to finish this project
 
-- 12 hour 45 minutes to complete it
-- 4 hour 50 minutes to make it responsive
+- 8 hour 45 minutes to complete it
+- 3 hour 50 minutes to make it responsive
 
 #### Screenshot
 
